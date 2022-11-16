@@ -1,0 +1,44 @@
+import re
+from cprint.tools import getshow_config
+from forbiddenfruit import curse
+
+STYLE_CONFIG = getshow_config(1)
+PATTERN1 = re.compile(r'(@(\d+)){\d+.*?}')
+
+def cp(text: str, style_id: int) -> str:
+    """
+    Colorful Processing
+    文档:
+        使用style_id处理一个字符串
+    参数:
+        text: str
+            需要处理的字符串
+        style_id: int
+            颜色id
+    返回:
+        返回处理好的字符串
+    """
+    return STYLE_CONFIG[style_id] + text + "\033[0;0m"
+
+def cf(text: str) -> str:
+    """
+    Colorful Format
+    文档:
+        使用style_id格式化字符串
+    参数:
+        text: str
+            需要格式化的字符串
+    返回:
+        返回格式化好的字符串
+    """
+    def pr_march(match):
+
+        replace_text, style_id = match.groups()
+        return match.group().replace(replace_text, STYLE_CONFIG[int(style_id)]) + "\033[0;0m"
+
+    return re.sub(PATTERN1, pr_march, text)
+
+def cformat(self, *args, **kwargs):
+    return cf(self).format(*args, **kwargs)
+
+curse(str, "cformat", cformat)
