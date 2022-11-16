@@ -36,6 +36,29 @@ print("@56056{0}@45031{1}".cformat("Hello ", " World!"))
 * `cpshoww` : 显示详细颜色信息
 * `cpdemo` : Hello World! 样例
 
+## 固定常量
+
+在字符串中使用 `@NOW`, `@DATE`, `@TIME` 配合 `cformatd` 函数可以获取到对应的时间字符串
+```
+print(" NOW: @NOW ".cformatd())
+print("DATE: @DATE ".cformatd())
+print("TIME: @TIME ".cformatd())
+```
+
+## 实现方式
+
+[How to Print Colored Text in Python](https://stackabuse.com/how-to-print-colored-text-in-python/)
+
+![how][4]
+![how][5]
+
+除了输出颜色字符外, 这种方式还可以控制光标、清屏的操作, 在其他语言如 `c` 下还有控制终端整体更改背景颜色类似的更高级的方法
+
+## 更新记录
+* 20221116: 1.更新新的常量 `@NOW`, `@DATE`, `@TIME` 的功能 2.更新文档
+
   [1]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/1.png
   [2]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/2.png
   [3]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/3.png
+  [4]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/4.png
+  [5]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/5.png

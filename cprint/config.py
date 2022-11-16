@@ -1,3 +1,5 @@
+import time
+
 RESTORE = "\033[0;0m"
 
 class COLOR32:
@@ -75,3 +77,9 @@ class COLOR256:
 
     # Color Code
     COLOR_CODE = list(range(256))
+
+CONTANT_DICT = {
+    "@DATE" : lambda : time.strftime('%Y-%m-%d'),
+    "@NOW" : lambda : time.strftime('%Y-%m-%d %H:%M:%S'),
+    "@TIME" : lambda : time.strftime('%H:%M:%S'),
+}
