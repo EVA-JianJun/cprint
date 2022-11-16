@@ -60,5 +60,5 @@ print("TIME: @TIME ".cformatd())
   [1]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/1.png
   [2]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/2.png
   [3]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/3.png
-  [4]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/4.png
-  [5]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/5.png
+  [4]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/4.jpg
+  [5]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/5.jpg
