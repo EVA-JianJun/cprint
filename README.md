@@ -38,11 +38,11 @@ print("@56056{0}@45031{1}".cformat("Hello ", " World!"))
 
 ## 固定常量
 
-在字符串中使用 `@NOW`, `@DATE`, `@TIME` 配合 `cformatd` 函数可以获取到对应的时间字符串
+在字符串中使用 `@NOW`, `@DATE`, `@TIME` 可以获取到对应的时间字符串
 ```
-print(" NOW: @NOW ".cformatd())
-print("DATE: @DATE ".cformatd())
-print("TIME: @TIME ".cformatd())
+print(" NOW: @NOW ".cformat())
+print("DATE: @DATE ".cformat())
+print("TIME: @TIME ".cformat())
 ```
 
 ## 实现方式
