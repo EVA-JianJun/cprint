@@ -127,3 +127,16 @@ def demo():
         style_id_1 = random.randrange(0, 70943)
         style_id_2 = random.randrange(0, 70943)
         print(("@" + str(style_id_1) + "{0}@" + str(style_id_2) + "{1}").cformat("Hello ", " World!"))
+
+def demoid():
+    """ 随机测试并显示id """
+    import cprint
+    import random
+
+    # print("@56056{0}@45031{1}".cformat("Hello ", " World!"))
+    for _ in range(10):
+        style_id_1 = random.randrange(0, 70943)
+        style_id_2 = random.randrange(0, 70943)
+        print(("@" + str(style_id_1) + "{0}@" + str(style_id_2) + "{1} {2:>6} {3:>6}").cformat(
+            "Hello ", " World!", style_id_1, style_id_2
+            ))

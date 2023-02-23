@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fd:
 
 setup(
     name = 'cprint-jianjun',
-    version = '1.1.0',
+    version = '1.2.0',
     author = 'jianjun',
     author_email = '910667956@qq.com',
     url = 'https://github.com/EVA-JianJun/cprint',
@@ -23,6 +23,7 @@ setup(
             'cpshow=cprint:_cpshow',
             'cpshoww=cprint:_cpshoww',
             'cpdemo=cprint:_demo',
+            'cpdemoid=cprint:_demoid',
         ],
     },
 )

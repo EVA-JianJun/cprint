@@ -35,6 +35,9 @@ print("@56056{0}@45031{1}".cformat("Hello ", " World!"))
 
 * `cpshoww` : 显示详细颜色信息
 * `cpdemo` : Hello World! 样例
+* `cpdemoid` : Hello World! 样例并显示样式ID
+
+可以多次调用 `cpdemoid` 查看样式配色, 选择喜欢的ID.
 
 ## 固定常量
 
@@ -44,6 +47,11 @@ print(" NOW: @NOW ".cformat())
 print("DATE: @DATE ".cformat())
 print("TIME: @TIME ".cformat())
 ```
+```
+ NOW: 2023-02-23 10:23:35
+DATE: 2023-02-23
+TIME: 10:23:35
+```
 
 ## 实现方式
 
@@ -52,10 +60,11 @@ print("TIME: @TIME ".cformat())
 ![how][4]
 ![how][5]
 
-除了输出颜色字符外, 这种方式还可以控制光标、清屏的操作, 在其他语言如 `c` 下还有控制终端整体更改背景颜色类似的更高级的方法
+除了输出颜色字符外, 这种方式还可以控制光标移动、清屏、控制终端更改背景颜色等操作.
 
 ## 更新记录
 * 20221116: 1.更新新的常量 `@NOW`, `@DATE`, `@TIME` 的功能 2.更新文档
+* 20230223: 1.更新文档 2.增加 `cpdemoid` 功能.
 
   [1]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/1.png
   [2]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/2.png
