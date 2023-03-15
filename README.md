@@ -24,6 +24,9 @@ print("@56056{0}@45031{1}".cformat("Hello ", " World!"))
 import cprint
 cprint.custom_style = {1: 612, 2: 1224}
 print("@1{0}@2{1}".iformat("Hello ", " World!"))
+
+# [] format
+print("@56056{0}@45031[ World!]".cformat("Hello "))
 ```
 
 ![use][2]
@@ -91,6 +94,7 @@ TIME: 10:23:35
 * 20221116: 1.更新新的常量 `@NOW`, `@DATE`, `@TIME` 的功能 2.更新文档
 * 20230223: 1.更新文档 2.增加 `cpdemoid` 命令行.
 * 20230303: 1.更新 `iformat` 函数.
+* 20230315: 1.更新 `[]` 功能.
 
   [1]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/1.png
   [2]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/2.png

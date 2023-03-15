@@ -5,7 +5,9 @@ from cprint.config import CONTANT_DICT
 from forbiddenfruit import curse
 
 STYLE_CONFIG = getshow_config(1)
-PATTERN = re.compile(r'(@(\d+)){\d+.*?}')
+# @加数字 中括号或者大括号 任意字符0或无限次 中括号或者大括号
+# 3组 @123 123 {
+PATTERN = re.compile(r'(@(\d+))([\{\[]).*?[\}\]]')
 
 def cp(text: str, style_id: int) -> str:
     """
@@ -35,8 +37,11 @@ def cf(text: str) -> str:
     """
     def pr_march(match):
 
-        replace_text, style_id = match.groups()
-        return match.group().replace(replace_text, STYLE_CONFIG[int(style_id)]) + "\033[0;0m"
+        replace_text, style_id, format_symbol = match.groups()
+        if format_symbol == "{":
+            return match.group().replace(replace_text, STYLE_CONFIG[int(style_id)]) + "\033[0;0m"
+        else:
+            return match.group().replace(replace_text + '[', STYLE_CONFIG[int(style_id)])[:-1] + "\033[0;0m"
 
     for mark, mark_fun in CONTANT_DICT.items():
         text = text.replace(mark, mark_fun())
@@ -61,8 +66,11 @@ def idf(text: str) -> str:
     """
     def pr_march(match):
 
-        replace_text, style_id = match.groups()
-        return match.group().replace(replace_text, STYLE_CONFIG[cprint.custom_style.get(int(style_id), int(style_id))]) + "\033[0;0m"
+        replace_text, style_id, format_symbol = match.groups()
+        if format_symbol == "{":
+            return match.group().replace(replace_text, STYLE_CONFIG[cprint.custom_style.get(int(style_id), int(style_id))]) + "\033[0;0m"
+        else:
+            return match.group().replace(replace_text + '[', STYLE_CONFIG[cprint.custom_style.get(int(style_id), int(style_id))])[:-1] + "\033[0;0m"
 
     for mark, mark_fun in CONTANT_DICT.items():
         text = text.replace(mark, mark_fun())
