@@ -1,5 +1,6 @@
 import os
 import math
+import traceback
 from cprint.config import COLOR32, COLOR256
 
 def getshow_config(mode: int=1) -> dict or None:
@@ -106,7 +107,19 @@ def getshow_config(mode: int=1) -> dict or None:
 
     """ 打印所有颜色样式列表 """
     print_n = 0
-    columns = os.get_terminal_size().columns
+    try:
+        columns = os.get_terminal_size().columns
+    except Exception as err:
+        # File "/usr/local/lib/python3.9/site-packages/cprint/main.py", line 7, in <module>
+        #     STYLE_CONFIG = getshow_config(1)
+        # File "/usr/local/lib/python3.9/site-packages/cprint/tools.py", line 109, in getshow_config
+        #     columns = os.get_terminal_size().columns
+        # OSError: [Errno 25] Inappropriate ioctl for device
+        columns = 100
+        print("WARNING: os.get_terminal_size Err, Get default columns = 100.")
+        traceback.print_exc()
+        print(err)
+
     for style_id, style_code in STYLE_ID_DICT.items():
         use_print_2('{0} {1:^5} \033[0;0m'.format(style_code, style_id), end="")
         print_n += 1
