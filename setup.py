@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fd:
 
 setup(
     name = 'cprint-jianjun',
-    version = '1.5.0',
+    version = '1.6.0',
     author = 'jianjun',
     author_email = '910667956@qq.com',
     url = 'https://github.com/EVA-JianJun/cprint',
