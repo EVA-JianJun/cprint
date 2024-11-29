@@ -43,6 +43,7 @@ print("@56056{0}@45031[ World!]".cformat("Hello "))
 
 ## 其他命令行
 
+* `cpshoww` : 显示各个 id 的详细信息
 * `cpdemo` : Hello World! 样例
 * `cpdemoid` : Hello World! 样例并显示样式ID
 
@@ -95,6 +96,7 @@ TIME: 10:23:35
 * 20230223: 1.更新文档 2.增加 `cpdemoid` 命令行.
 * 20230303: 1.更新 `iformat` 函数.
 * 20230315: 1.更新 `[]` 功能.
+* 20241129: 1.`cpshoww` 显示详细的转义序列信息
 
   [1]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/1.png
   [2]: https://raw.githubusercontent.com/EVA-JianJun/cprint/master/img/2.png
